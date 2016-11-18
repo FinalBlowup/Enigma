@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
+#include <string>
 using namespace std;
 void encode(char word[])
 {
@@ -35,18 +36,18 @@ int main()
 {
     srand(time(NULL));
     char word[9000] = {' '};
-    int ed;
-    cout<<"Would you like to encode or decode(1 or 2)\n";
+    string ed;
+    cout<<"Would you like to encode or decode"<<endl;
     cin>>ed;
-    if (ed == 1)
+   if (ed.compare("encode") == 0)
     {
-        cout<<"What word would you like to encode\n";
+        cout<<"What word would you like to encode"<<endl;;
         cin>>word;
         encode(word);
     }
-    else if (ed == 2)
+    if (ed.compare("encode") == 0)
     {
-        cout<<"What word would you like to decode\n";
+        cout<<"What word would you like to decode"<<endl;
         cin>>word;
         decode(word);
     }
