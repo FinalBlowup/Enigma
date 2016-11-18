@@ -1,11 +1,8 @@
 #include <iostream>
-#include <stdlib.h>
-#include <time.h>
 #include <string>
 using namespace std;
 void encode(char word[])
 {
-    int random = rand() % 26 + 98;
     for (int i =0; word[i] != NULL; i++)
     {
         if (word[i] == 'y' || word[i] == 'z')
@@ -15,7 +12,6 @@ void encode(char word[])
         word[i] = word[i] + 2;
         cout<<word[i];
     }
-    cout<<(char)random<<endl;
 }
 void decode(char word[])
 {
@@ -34,7 +30,6 @@ void decode(char word[])
 }
 int main()
 {
-    srand(time(NULL));
     char word[9000] = {' '};
     string ed;
     cout<<"Would you like to encode or decode"<<endl;
