@@ -50,7 +50,7 @@ int main()
     {
         cin>>code1[i];
     }
-   if (ed.compare("encode") == 0)
+    if (ed.compare("encode") == 0)
     {
         cout<<"What word would you like to encode"<<endl;;
         cin>>word;
