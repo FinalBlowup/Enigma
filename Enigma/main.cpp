@@ -3,29 +3,26 @@
 #include <time.h>
 #include <string>
 using namespace std;
-void encode(char word[], int code1[], int three)
+void encode(char word[], int code1[])
 {
+    int counter = 0;
     for (int j = 0; j < 3; j++)
     {
-    if (code1[j] == 1)
-       {
-    for (int i =0; word[i] != NULL; i++)
-         {
-      
-        word[i] = word[i] + 6;
-        if (three == 6)
+        if (code1[j] == 1)
         {
-            cout<<word[i];
+            for (int i = 0; word[i] != NULL; i++)
+            {
+                word[i] = word[i] + 6;
+                counter++;
+            }
         }
-             else
-             {
-                 three++;
-             }
-         }
-       }
+    }
+    for (int i = 0; word[i] != NULL; i++)
+    {
+        cout<<word[i];
     }
 }
-void decode(char word[], int code1[], int three)
+void decode(char word[], int code1[])
 {
     for (int j = 0; j < 3; j++)
     {
@@ -35,14 +32,7 @@ void decode(char word[], int code1[], int three)
             {
                 
                 word[i] = word[i] - 6;
-                if (three == 6)
-                {
-                    cout<<word[i];
-                }
-                else
-                {
-                    three++;
-                }
+                
             }
         }
     }
@@ -51,7 +41,7 @@ int main()
 {
     srand(time(NULL));
     char word[9000] = {' '};
-    int code1[3], three = 0;
+    int code1[3];
     string ed;
     cout<<"Would you like to encode or decode"<<endl;
     cin>>ed;
@@ -64,7 +54,7 @@ int main()
     {
         cout<<"What word would you like to encode"<<endl;;
         cin>>word;
-        encode(word,code1,three);
+        encode(word,code1);
         cout<<endl;
         return 0;
     }
@@ -72,7 +62,7 @@ int main()
     {
         cout<<"What word would you like to decode"<<endl;
         cin>>word;
-        decode(word,code1,three);
+        decode(word,code1);
         cout<<endl;
         return 0;
     }
