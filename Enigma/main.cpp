@@ -7,22 +7,22 @@ void encode(char word[], int code1[], int three)
 {
     for (int j = 0; j < 3; j++)
     {
-    if (code1[j] == 1)
-       {
-    for (int i =0; word[i] != NULL; i++)
-         {
-      
-        word[i] = word[i] + 6;
-        if (three == 6)
+        if (code1[j] == 1)
         {
-            cout<<word[i];
+            for (int i =0; word[i] != NULL; i++)
+            {
+                
+                word[i] = word[i] + 6;
+                if (three == 6)
+                {
+                    cout<<word[i];
+                }
+                else
+                {
+                    three++;
+                }
+            }
         }
-             else
-             {
-                 three++;
-             }
-         }
-       }
     }
 }
 void decode(char word[], int code1[], int three)
@@ -60,7 +60,7 @@ int main()
     {
         cin>>code1[i];
     }
-   if (ed.compare("encode") == 0)
+    if (ed.compare("encode") == 0)
     {
         cout<<"What word would you like to encode"<<endl;;
         cin>>word;
