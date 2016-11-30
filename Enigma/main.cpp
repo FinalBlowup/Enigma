@@ -222,5 +222,5 @@ int main()
     {
         cout<<"Type encode or decode."<<endl;
     }
-    return 0;
+    return 0;//Returns 0
 }
