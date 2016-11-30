@@ -1,185 +1,184 @@
-#include <iostream>
-#include <stdlib.h>
-#include <time.h>
-#include <string>
-using namespace std;
-void encode(char word[], int code1[])
+#include <iostream> //Basic requirement for cout/cin
+#include <stdlib.h> //Required for srand(time(NULL)) which is needed to run for loops until the end of an array
+#include <time.h> //Required for srand(time(NULL))
+#include <string> //Program requires strings for the user entering either 'encode' or 'decode'
+using namespace std; //Used for convenience of not typing 'std::' every time
+void encode(char word[], int code1[]) //Encode function
 {
-    for (int j = 0; j < 3; j++) //This for loop covers almost the entire function. It runs three times and takes three settings and makes a change each time.
+    for (int j = 0; j < 3; j++) //This for loop covers almost the entire encode function. It runs three times and takes the three settings and makes a change each time.
     {
-        if (code1[j] == 0) //If any of the user's settings is 0 then this happens
+        if (code1[j] == 0) //If any of the user's settings is 0 then the following changes in the for loop occur
         {
             for (int i = 0; word[i] != NULL; i++)
             {
-                word[i] = word[i] + 27;
-                
+                word[i] = word[i] + 4;
+
             }
         }
-        if (code1[j] == 1) //If any of the user's settings is 1 then this happens
-        {
-            for (int i = 0; word[i] != NULL; i++) 
-            {
-                word[i] = word[i] + 6;
-                
-            }
-        }
-        if (code1[j] == 2) //If any of the user's settings is 2 then this happens
+        if (code1[j] == 1) //If any of the user's settings is 1 then the following changes in the for loop occur
         {
             for (int i = 0; word[i] != NULL; i++)
             {
-                word[i] = word[i] - 12;
-                
+                word[i] = word[i] + 1;
+
             }
         }
-        if (code1[j] == 3) //If any of the user's settings is 3 then this happens
+        if (code1[j] == 2)  //If any of the user's settings is 2 then the following changes in the for loop occur
+        {
+            for (int i = 0; word[i] != NULL; i++) //If any of the user's settings is 2 then the following changes in the for loop occur
+            {
+                word[i] = word[i] - 9;
+
+            }
+        }
+        if (code1[j] == 3) //If any of the user's settings is 3 then the following changes in the for loop occur
         {
             for (int i = 0; word[i] != NULL; i++)
             {
-                word[i] = word[i] + 66;
-                
+                word[i] = word[i] - 5;
+
             }
         }
-        if (code1[j] == 4) //If any of the user's settings is 4 then this happens
+        if (code1[j] == 4) //If any of the user's settings is 4 then the following changes in the for loop occur
         {
             for (int i = 0; word[i] != NULL; i++)
             {
-                word[i] = word[i] - 23;
-                
+                word[i] = word[i] - 10;
+
             }
         }
-        if (code1[j] == 5) //If any of the user's settings is 5 then this happens
+        if (code1[j] == 5) //If any of the user's settings is 5 then the following changes in the for loop occur
         {
             for (int i = 0; word[i] != NULL; i++)
             {
-                word[i] = word[i] + 38;
-                
+                word[i] = word[i] - 3;
+
             }
         }
-        if (code1[j] == 6) //If any of the user's settings is 6 then this happens
+        if (code1[j] == 6) //If any of the user's settings is 6 then the following changes in the for loop occur
         {
             for (int i = 0; word[i] != NULL; i++)
             {
-                word[i] = word[i] - 42;
-                
+                word[i] = word[i] - 8;
+
             }
         }
-        if (code1[j] == 7) //If any of the user's settings is 7 then this happens
+        if (code1[j] == 7) //If any of the user's settings is 7 then the following changes in the for loop occur
         {
             for (int i = 0; word[i] != NULL; i++)
             {
-                word[i] = word[i] - 49;
-                
+                word[i] = word[i] - 4;
+
             }
         }
-        if (code1[j] == 8) //If any of the user's settings is 8 then this happens
+        if (code1[j] == 8) //If any of the user's settings is 8 then the following changes in the for loop occur
         {
             for (int i = 0; word[i] != NULL; i++)
             {
-                word[i] = word[i] + 68;
-                
+                word[i] = word[i] + 2;
+
             }
         }
-        if (code1[j] == 9) //If any of the user's settings is 9 then this happens
+        if (code1[j] == 9) //If any of the user's settings is 9 then the following changes in the for loop occur
         {
             for (int i = 0; word[i] != NULL; i++)
             {
-                word[i] = word[i] + 53;
-                
+                word[i] = word[i] - 6;
+
             }
         }
     }
-   
     for (int i = 0; word[i] != NULL; i++) //This loop will cout the encoded word
     {
         cout<<word[i];
     }
 }
-void decode(char word[], int code1[])
+void decode(char word[], int code1[]) //Decode function
 {
-    for (int j = 0; j < 3; j++)
+    for (int j  = 0; j < 3; j++) //This for loop covers almost the entire decode function. It runs three times and takes the three settings and makes a change each time.
     {
-        if (code1[j] == 0) //If any of the user's settings is 0 then this happens
+        if (code1[j] == 0) //If any of the user's settings is 0 then the following changes in the for loop occur
         {
             for (int i = 0; word[i] != NULL; i++)
             {
-                word[i] = word[i] - 27;
-                
+                word[i] = word[i] - 4;
+
             }
         }
-        if (code1[j] == 1) //If any of the user's settings is 1 then this happens
+        if (code1[j] == 1) //If any of the user's settings is 1 then the following changes in the for loop occur
         {
             for (int i = 0; word[i] != NULL; i++)
             {
-                word[i] = word[i] - 6;
-                
+                word[i] = word[i] - 1;
+
             }
         }
-        if (code1[j] == 2) //If any of the user's settings is 2 then this happens
+        if (code1[j] == 2) //If any of the user's settings is 2 then the following changes in the for loop occur
         {
             for (int i = 0; word[i] != NULL; i++)
             {
-                word[i] = word[i] + 12;
-                
+                word[i] = word[i] + 9;
+
             }
         }
-        if (code1[j] == 3) //If any of the user's settings is 3 then this happens
+        if (code1[j] == 3) //If any of the user's settings is 3 then the following changes in the for loop occur
         {
             for (int i = 0; word[i] != NULL; i++)
             {
-                word[i] = word[i] - 66;
-                
+                word[i] = word[i] + 5;
+
             }
         }
-        if (code1[j] == 4) //If any of the user's settings is 4 then this happens
+        if (code1[j] == 4) //If any of the user's settings is 4 then the following changes in the for loop occur
         {
             for (int i = 0; word[i] != NULL; i++)
             {
-                word[i] = word[i] + 23;
-                
+                word[i] = word[i] + 10;
+
             }
         }
-        if (code1[j] == 5) //If any of the user's settings is 5 then this happens
+        if (code1[j] == 5) //If any of the user's settings is 5 then the following changes in the for loop occur
         {
             for (int i = 0; word[i] != NULL; i++)
             {
-                word[i] = word[i] - 38;
-                
+                word[i] = word[i] + 3;
+
             }
         }
-        if (code1[j] == 6) //If any of the user's settings is 6 then this happens
+        if (code1[j] == 6) //If any of the user's settings is 6 then the following changes in the for loop occur
         {
             for (int i = 0; word[i] != NULL; i++)
             {
-                word[i] = word[i] + 42;
-                
+                word[i] = word[i] + 8;
+
             }
         }
-        if (code1[j] == 7) //If any of the user's settings is 7 then this happens
+        if (code1[j] == 7) //If any of the user's settings is 7 then the following changes in the for loop occur
         {
             for (int i = 0; word[i] != NULL; i++)
             {
-                word[i] = word[i] + 49;
-                
+                word[i] = word[i] + 4;
+
             }
         }
-        if (code1[j] == 8) //If any of the user's settings is 8 then this happens
+        if (code1[j] == 8) //If any of the user's settings is 8 then the following changes in the for loop occur
         {
             for (int i = 0; word[i] != NULL; i++)
             {
-                word[i] = word[i] - 68;
-                
+                word[i] = word[i] - 2;
+
             }
         }
-        if (code1[j] == 9) //If any of the user's settings is 9 then this happens
+        if (code1[j] == 9) //If any of the user's settings is 9 then the following changes in the for loop occur
         {
             for (int i = 0; word[i] != NULL; i++)
             {
-                word[i] = word[i] - 53;
-                
+                word[i] = word[i] + 6;
+
             }
         }
     }
-    for (int i = 0; word[i] != NULL; i++) //This for loop will cout the decoded word
+    for (int i = 0; word[i] != NULL; i++) //This loop will cout the decoded word
     {
         cout<<word[i];
     }
@@ -187,41 +186,41 @@ void decode(char word[], int code1[])
 int main()
 {
     srand(time(NULL));
-    char word[9000] = {' '};
-    int code1[3];
-    string ed;
+    char word[9000] = {' '}; //The word to be encoded
+    int code1[3]; //Used for the settings
+    string ed; //The 'encode' or 'decode' is saved in a string so that .compare can be used
     cout<<"Would you like to encode or decode"<<endl;
-    cin>>ed;
+    cin>>ed; //User enters whether they want to encode or decode
 
     if (ed.compare("encode") == 0) //If the user enters encode, it enters the if statement
     {
         cout<<"Enter the setting"<<endl;
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 3; i++) //For loop to run thrice and get three settings into the array
         {
-            cin>>code1[i]; //User enters the setting number between 0 and 9 three times (for loop)
+            cin>>code1[i]; //User enters three numbers between 0 and 9 for the setting
         }
         cout<<"What word would you like to encode"<<endl;;
-        cin>>word; //User enters the word that they want to encode
-        encode(word,code1); //Runs the function to encode
+        cin>>word; //User enters the word that they would like to encode
+        encode(word,code1); //Runs the function to encode the word
         cout<<endl;
         return 0;
     }
-    if (ed.compare("decode") == 0) //If the user enters decode, it enters the if statement
+    else if (ed.compare("decode") == 0) //If the user enters decode, it enters the other if statement
     {
         cout<<"Enter the setting"<<endl;
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 3; i++) //For loop to run thrice and get three settings into the array
         {
-            cin>>code1[i]; //User enters the setting number between 0 and 9 three times (for loop)
+            cin>>code1[i]; //User enters three numbers between 0 and 9 for the setting
         }
         cout<<"What word would you like to decode"<<endl;
-        cin>>word; //User enters the word that they want to decode
-        decode(word,code1); //Runs the function to decode
+        cin>>word; //User enters the word that they would like to decode
+        decode(word,code1); //Runs the function to decode the word
         cout<<endl;
         return 0;
     }
-    else //if the user does not enter 'encode' or 'decode', it enters the else which tells the user to enter encode or decode and ends the program
+    else //If the user enters anything other than 'encode' or 'decode', the program will tell them to enter appropriately and end the program
     {
         cout<<"Type encode or decode."<<endl;
     }
-    return 0; //ends the program
+    return 0;
 }
