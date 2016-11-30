@@ -22,7 +22,7 @@ int main()
         {
             cin>>code1[i]; //User enters three numbers between 0 and 9 for the setting
         }
-        cout<<"What word would you like to encode"<<endl;;
+        cout<<"What would you like to encode (only letters and underscore)"<<endl; //User should only enter letters or underscore
         cin>>word; //User enters the word that they would like to encode
         encode (word,code1); //Runs the function to encode the word
         cout<<endl;
@@ -35,7 +35,7 @@ int main()
         {
             cin>>code1[i]; //User enters three numbers between 0 and 9 for the setting
         }
-        cout<<"What word would you like to decode"<<endl;
+        cout<<"What would you like to decode (only letters and underscore)"<<endl; //User should only enter letters or underscore
         cin>>word; //User enters the word that they would like to decode
         decode(word,code1); //Runs the function to decode the word
         cout<<endl;
