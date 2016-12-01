@@ -72,13 +72,13 @@ void encode (char word[], int code1[]) //Encode function
                 }
                 break;
             case 3: //If any of the user's settings is 3 then the following changes in the for loop occur
-            {
+            
                 for (int i = 0; word[i] != NULL; i++)
                 {
                     word[i] = word[i] - 5;
                     
                 }
-            }
+                break;
             case 4: //If any of the user's settings is 4 then the following changes in the for loop occur
                 for (int i = 0; word[i] != NULL; i++)
                 {
