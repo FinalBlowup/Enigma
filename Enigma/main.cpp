@@ -1,6 +1,4 @@
 #include <iostream> //Basic requirement for cout/cin
-#include <stdlib.h> //Required for srand(time(NULL)) which is needed to run for loops until the end of an array
-#include <time.h> //Required for srand(time(NULL))
 #include <string> //Program requires strings for the user entering either 'encode' or 'decode'
 using namespace std; //Used for convenience of not typing 'std::' every time
 void encode(char[] ,int[]);//Encode function introduced
@@ -8,7 +6,6 @@ void decode(char[] , int[]); //Decode function introduced
 
 int main()
 {
-    srand(time(NULL));
     char word[9000] = {' '}; //The word to be encoded
     int code1[3]; //Used for the settings
     string ed; //The 'encode' or 'decode' is saved in a string so that .compare can be used
