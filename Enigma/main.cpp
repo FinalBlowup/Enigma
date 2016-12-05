@@ -9,7 +9,7 @@ int main()
     char word[9000] = {' '}; //The word to be encoded
     int code1[3]; //Used for the settings
     string ed; //The 'encode' or 'decode' is saved in a string so that .compare can be used
-    re(ed, code1, word);
+    re(ed, code1, word); //Calls the function which prompts the user (re stands for recursion)
 }
 void re(string ed,int code1[],char word[])
 {
@@ -18,7 +18,7 @@ void re(string ed,int code1[],char word[])
     
     if (ed.compare("encode") == 0) //If the user enters encode, it enters the if statement
     {
-        cout<<"Enter the setting (Three numbers between 0 and 9)."<<endl;
+        cout<<"Enter the setting (Three numbers between 0 and 9; between numbers, add a space or use enter)."<<endl;
         for (int i = 0; i < 3; i++) //For loop to run thrice and get three settings into the array
         {
             cin>>code1[i]; //User enters three numbers between 0 and 9 for the setting
@@ -30,7 +30,7 @@ void re(string ed,int code1[],char word[])
     }
     else if (ed.compare("decode") == 0) //If the user enters decode, it enters the other if statement
     {
-        cout<<"Enter the setting (Three numbers between 0 and 9)."<<endl;
+        cout<<"Enter the setting (Three numbers between 0 and 9; between numbers, add a space or use enter)."<<endl;
         for (int i = 0; i < 3; i++) //For loop to run thrice and get three settings into the array
         {
             cin>>code1[i]; //User enters three numbers between 0 and 9 for the setting
@@ -135,7 +135,7 @@ void encode (char word[], int code1[]) //Encode function
                     {
                         word[i] = word[i] - 3;
                     }
- 
+                    
                 }
                 break;
             case 5: //If any of the user's settings is 5 then the following changes in the for loop occur
@@ -170,7 +170,7 @@ void encode (char word[], int code1[]) //Encode function
                     {
                         word[i] = word[i] - 10;
                     }
- 
+                    
                 }
                 break;
             case 7: //If any of the user's settings is 7 then the following changes in the for loop occur
@@ -188,7 +188,7 @@ void encode (char word[], int code1[]) //Encode function
                     {
                         word[i] = word[i] - 5;
                     }
-
+                    
                 }
                 break;
             case 8: //If any of the user's settings is 8 then the following changes in the for loop occur
@@ -206,7 +206,7 @@ void encode (char word[], int code1[]) //Encode function
                     {
                         word[i] = word[i] - 1;
                     }
-
+                    
                 }
                 break;
             case 9: //If any of the user's settings is 9 then the following changes in the for loop occur
@@ -224,7 +224,7 @@ void encode (char word[], int code1[]) //Encode function
                     {
                         word[i] = word[i] + 2;
                     }
-
+                    
                 }
                 break;
             default:
