@@ -48,13 +48,13 @@ void re(string ed,int code1[],char word[])
 }
 void encode (char word[], int code1[]) //Encode function
 {
-    for (int j = 0; j < 3; j++) //This for loop covers almost the entire encode function. It runs three times and takes the three settings and makes a change each time.
+    for (int i = 0; word[i] != NULL; i++)
     {
-        switch (code1[j])
+        for (int j = 0; j < 3; j++) //This for loop covers almost the entire encode function. It runs three times and takes the three settings and makes a change each time.
         {
-            case 0: //If any of the user's settings is 0 then the following changes in the for loop occur
-                for (int i = 0; word[i] != NULL; i++)
-                {
+            switch (code1[j])
+            {
+                case 0: //If any of the user's settings is 0 then the following changes in the for loop occur
                     if (j == 0)
                     {
                         word[i] = word[i] + 4;
@@ -67,11 +67,8 @@ void encode (char word[], int code1[]) //Encode function
                     {
                         word[i] = word[i] - 9;
                     }
-                }
-                break;
-            case 1: //If any of the user's settings is 1 then the following changes in the for loop occur
-                for (int i = 0; word[i] != NULL; i++)
-                {
+                    break;
+                case 1: //If any of the user's settings is 1 then the following changes in the for loop occur
                     if (j == 0)
                     {
                         word[i] = word[i] + 1;
@@ -84,11 +81,8 @@ void encode (char word[], int code1[]) //Encode function
                     {
                         word[i] = word[i] - 6;
                     }
-                }
-                break;
-            case 2:  //If any of the user's settings is 2 then the following changes in the for loop occur
-                for (int i = 0; word[i] != NULL; i++) //If any of the user's settings is 2 then the following changes in the for loop occur
-                {
+                    break;
+                case 2:  //If any of the user's settings is 2 then the following changes in the for loop occur
                     if (j == 0)
                     {
                         word[i] = word[i] - 9;
@@ -101,11 +95,8 @@ void encode (char word[], int code1[]) //Encode function
                     {
                         word[i] = word[i] + 3;
                     }
-                }
-                break;
-            case 3: //If any of the user's settings is 3 then the following changes in the for loop occur
-                for (int i = 0; word[i] != NULL; i++)
-                {
+                    break;
+                case 3: //If any of the user's settings is 3 then the following changes in the for loop occur
                     if (j == 0)
                     {
                         word[i] = word[i] - 5;
@@ -118,11 +109,8 @@ void encode (char word[], int code1[]) //Encode function
                     {
                         word[i] = word[i] + 1;
                     }
-                }
-                break;
-            case 4: //If any of the user's settings is 4 then the following changes in the for loop occur
-                for (int i = 0; word[i] != NULL; i++)
-                {
+                    break;
+                case 4: //If any of the user's settings is 4 then the following changes in the for loop occur
                     if (j == 0)
                     {
                         word[i] = word[i] - 10;
@@ -135,12 +123,8 @@ void encode (char word[], int code1[]) //Encode function
                     {
                         word[i] = word[i] - 3;
                     }
-                    
-                }
-                break;
-            case 5: //If any of the user's settings is 5 then the following changes in the for loop occur
-                for (int i = 0; word[i] != NULL; i++)
-                {
+                    break;
+                case 5: //If any of the user's settings is 5 then the following changes in the for loop occur
                     if (j == 0)
                     {
                         word[i] = word[i] - 3;
@@ -153,11 +137,8 @@ void encode (char word[], int code1[]) //Encode function
                     {
                         word[i] = word[i] + 4;
                     }
-                }
-                break;
-            case 6: //If any of the user's settings is 6 then the following changes in the for loop occur
-                for (int i = 0; word[i] != NULL; i++)
-                {
+                    break;
+                case 6: //If any of the user's settings is 6 then the following changes in the for loop occur
                     if (j == 0)
                     {
                         word[i] = word[i] - 8;
@@ -170,12 +151,8 @@ void encode (char word[], int code1[]) //Encode function
                     {
                         word[i] = word[i] - 10;
                     }
-                    
-                }
-                break;
-            case 7: //If any of the user's settings is 7 then the following changes in the for loop occur
-                for (int i = 0; word[i] != NULL; i++)
-                {
+                    break;
+                case 7: //If any of the user's settings is 7 then the following changes in the for loop occur
                     if (j == 0)
                     {
                         word[i] = word[i] - 4;
@@ -188,12 +165,8 @@ void encode (char word[], int code1[]) //Encode function
                     {
                         word[i] = word[i] - 5;
                     }
-                    
-                }
-                break;
-            case 8: //If any of the user's settings is 8 then the following changes in the for loop occur
-                for (int i = 0; word[i] != NULL; i++)
-                {
+                    break;
+                case 8: //If any of the user's settings is 8 then the following changes in the for loop occur
                     if (j == 0)
                     {
                         word[i] = word[i] + 2;
@@ -206,12 +179,8 @@ void encode (char word[], int code1[]) //Encode function
                     {
                         word[i] = word[i] - 1;
                     }
-                    
-                }
-                break;
-            case 9: //If any of the user's settings is 9 then the following changes in the for loop occur
-                for (int i = 0; word[i] != NULL; i++)
-                {
+                    break;
+                case 9: //If any of the user's settings is 9 then the following changes in the for loop occur
                     if (j == 0)
                     {
                         word[i] = word[i] - 6;
@@ -224,12 +193,29 @@ void encode (char word[], int code1[]) //Encode function
                     {
                         word[i] = word[i] + 2;
                     }
-                    
+                    break;
+                default:
+                    break;
+            };
+            
+        }
+        code1[2] = code1[2] + 1;
+        if (code1[2] == 10)
+        {
+            code1[2] = 0;
+            code1[1] = code1[1] + 1;
+            if (code1[1] == 10)
+            {
+                code1[1] = 0;
+                code1[0] = code1[0] + 1;
+                if (code1[0] == 10)
+                {
+                    code1[0] = 0;
+                    code1[1] = 0;
+                    code1[2] = 0;
                 }
-                break;
-            default:
-                break;
-        };
+            }
+        }
     }
     for (int i = 0; word[i] != NULL; i++) //This loop will cout the encoded word
     {
@@ -238,13 +224,13 @@ void encode (char word[], int code1[]) //Encode function
 }
 void decode(char word[], int code1[]) //Decode function
 {
-    for (int j  = 0; j < 3; j++) //This for loop covers almost the entire decode function. It runs three times and takes the three settings and makes a change each time.
+    for (int i = 0; word[i] != NULL; i++)
     {
-        switch (code1[j])
+        for (int j = 0; j < 3; j++) //This for loop covers almost the entire decode function. It runs three times and takes the three settings and makes a change each time.
         {
-            case 0: //If any of the user's settings is 0 then the following changes in the for loop occur
-                for (int i = 0; word[i] != NULL; i++)
-                {
+            switch (code1[j])
+            {
+                case 0: //If any of the user's settings is 0 then the following changes in the for loop occur
                     if (j == 0)
                     {
                         word[i] = word[i] - 4;
@@ -257,11 +243,8 @@ void decode(char word[], int code1[]) //Decode function
                     {
                         word[i] = word[i] + 9;
                     }
-                }
-                break;
-            case 1: //If any of the user's settings is 1 then the following changes in the for loop occur
-                for (int i = 0; word[i] != NULL; i++)
-                {
+                    break;
+                case 1: //If any of the user's settings is 1 then the following changes in the for loop occur
                     if (j == 0)
                     {
                         word[i] = word[i] - 1;
@@ -274,11 +257,8 @@ void decode(char word[], int code1[]) //Decode function
                     {
                         word[i] = word[i] + 6;
                     }
-                }
-                break;
-            case 2: //If any of the user's settings is 2 then the following changes in the for loop occur
-                for (int i = 0; word[i] != NULL; i++)
-                {
+                    break;
+                case 2: //If any of the user's settings is 2 then the following changes in the for loop occur
                     if (j == 0)
                     {
                         word[i] = word[i] + 9;
@@ -291,11 +271,8 @@ void decode(char word[], int code1[]) //Decode function
                     {
                         word[i] = word[i] - 3;
                     }
-                }
-                break;
-            case 3: //If any of the user's settings is 3 then the following changes in the for loop occur
-                for (int i = 0; word[i] != NULL; i++)
-                {
+                    break;
+                case 3: //If any of the user's settings is 3 then the following changes in the for loop occur
                     if (j == 0)
                     {
                         word[i] = word[i] + 5;
@@ -308,11 +285,8 @@ void decode(char word[], int code1[]) //Decode function
                     {
                         word[i] = word[i] - 1;
                     }
-                }
-                break;
-            case 4: //If any of the user's settings is 4 then the following changes in the for loop occur
-                for (int i = 0; word[i] != NULL; i++)
-                {
+                    break;
+                case 4: //If any of the user's settings is 4 then the following changes in the for loop occur
                     if (j == 0)
                     {
                         word[i] = word[i] + 10;
@@ -325,11 +299,8 @@ void decode(char word[], int code1[]) //Decode function
                     {
                         word[i] = word[i] + 3;
                     }
-                }
-                break;
-            case 5: //If any of the user's settings is 5 then the following changes in the for loop occur
-                for (int i = 0; word[i] != NULL; i++)
-                {
+                    break;
+                case 5: //If any of the user's settings is 5 then the following changes in the for loop occur
                     if (j == 0)
                     {
                         word[i] = word[i] + 3;
@@ -342,11 +313,8 @@ void decode(char word[], int code1[]) //Decode function
                     {
                         word[i] = word[i] - 4;
                     }
-                }
-                break;
-            case 6: //If any of the user's settings is 6 then the following changes in the for loop occur
-                for (int i = 0; word[i] != NULL; i++)
-                {
+                    break;
+                case 6: //If any of the user's settings is 6 then the following changes in the for loop occur
                     if (j == 0)
                     {
                         word[i] = word[i] + 8;
@@ -359,11 +327,8 @@ void decode(char word[], int code1[]) //Decode function
                     {
                         word[i] = word[i] + 10;
                     }
-                }
-                break;
-            case 7: //If any of the user's settings is 7 then the following changes in the for loop occur
-                for (int i = 0; word[i] != NULL; i++)
-                {
+                    break;
+                case 7: //If any of the user's settings is 7 then the following changes in the for loop occur
                     if (j == 0)
                     {
                         word[i] = word[i] + 4;
@@ -376,11 +341,8 @@ void decode(char word[], int code1[]) //Decode function
                     {
                         word[i] = word[i] + 5;
                     }
-                }
-                break;
-            case 8: //If any of the user's settings is 8 then the following changes in the for loop occur
-                for (int i = 0; word[i] != NULL; i++)
-                {
+                    break;
+                case 8: //If any of the user's settings is 8 then the following changes in the for loop occur
                     if (j == 0)
                     {
                         word[i] = word[i] - 2;
@@ -393,11 +355,8 @@ void decode(char word[], int code1[]) //Decode function
                     {
                         word[i] = word[i] + 1;
                     }
-                }
-                break;
-            case 9: //If any of the user's settings is 9 then the following changes in the for loop occur
-                for (int i = 0; word[i] != NULL; i++)
-                {
+                    break;
+                case 9: //If any of the user's settings is 9 then the following changes in the for loop occur
                     if (j == 0)
                     {
                         word[i] = word[i] + 6;
@@ -410,11 +369,28 @@ void decode(char word[], int code1[]) //Decode function
                     {
                         word[i] = word[i] - 2;
                     }
+                    break;
+                default:
+                    break;
+            };
+        }
+        code1[2] = code1[2] + 1;
+        if (code1[2] == 10)
+        {
+            code1[2] = 0;
+            code1[1] = code1[1] + 1;
+            if (code1[1] == 10)
+            {
+                code1[1] = 0;
+                code1[0] = code1[0] + 1;
+                if (code1[0] == 10)
+                {
+                    code1[0] = 0;
+                    code1[1] = 0;
+                    code1[2] = 0;
                 }
-                break;
-            default:
-                break;
-        };
+            }
+        }
     }
     for (int i = 0; word[i] != NULL; i++) //This loop will cout the decoded word
     {
