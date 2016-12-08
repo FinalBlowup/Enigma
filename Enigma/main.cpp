@@ -3,7 +3,8 @@
 using namespace std; //Used for convenience of not typing 'std::' every time
 void encode(char[] ,int[]);//Encode function introduced
 void decode(char[] , int[]); //Decode function introduced
-void re(string, int[], char[]);
+void re(string, int[], char[]); //Recursion function
+void quicksetting(int[]); //Setting function introduced
 int main()
 {
     char word[9000] = {' '}; //The word to be encoded
@@ -11,7 +12,7 @@ int main()
     string ed; //The 'encode' or 'decode' is saved in a string so that .compare can be used
     re(ed, code1, word); //Calls the function which prompts the user (re stands for recursion)
 }
-void re(string ed,int code1[],char word[])
+void re(string ed,int code1[],char word[]) //If the user inputs a word that isn't 'encode' or 'decode' then recursion will happen and the function will give them another chance
 {
     cout<<"Would you like to encode or decode? (Remember not to use numbers)"<<endl;
     cin>>ed; //User enters whether they want to encode or decode
@@ -43,7 +44,7 @@ void re(string ed,int code1[],char word[])
     else
     {
         cout<<"Try again, you failed, enter 'encode' or 'decode', now: "<<endl;
-        re(ed, code1, word);
+        re(ed, code1, word); //Recursion that calls itself to give the user another chance if the user doesn't enter 'encode' or 'decode'
     }
 }
 void encode (char word[], int code1[]) //Encode function
@@ -197,25 +198,8 @@ void encode (char word[], int code1[]) //Encode function
                 default:
                     break;
             };
-            
         }
-        code1[2] = code1[2] + 1;
-        if (code1[2] == 10)
-        {
-            code1[2] = 0;
-            code1[1] = code1[1] + 1;
-            if (code1[1] == 10)
-            {
-                code1[1] = 0;
-                code1[0] = code1[0] + 1;
-                if (code1[0] == 10)
-                {
-                    code1[0] = 0;
-                    code1[1] = 0;
-                    code1[2] = 0;
-                }
-            }
-        }
+        quicksetting(code1); //Increments user's setting
     }
     for (int i = 0; word[i] != NULL; i++) //This loop will cout the encoded word
     {
@@ -374,26 +358,30 @@ void decode(char word[], int code1[]) //Decode function
                     break;
             };
         }
-        code1[2] = code1[2] + 1;
-        if (code1[2] == 10)
-        {
-            code1[2] = 0;
-            code1[1] = code1[1] + 1;
-            if (code1[1] == 10)
-            {
-                code1[1] = 0;
-                code1[0] = code1[0] + 1;
-                if (code1[0] == 10)
-                {
-                    code1[0] = 0;
-                    code1[1] = 0;
-                    code1[2] = 0;
-                }
-            }
-        }
+        quicksetting(code1); //Increments user's setting
     }
     for (int i = 0; word[i] != NULL; i++) //This loop will cout the decoded word
     {
         cout<<word[i];
+    }
+}
+void quicksetting(int code1[]) //This function is for incrementing the user's original function to make decoding without the program hard
+{
+    code1[2] = code1[2] + 1; //Adds one to the setting
+    if (code1[2] == 10) //If the ones place goes above 9 then the tens place is incremented and the ones place is 0 again
+    {
+        code1[2] = 0;
+        code1[1] = code1[1] + 1;
+        if (code1[1] == 10) //If the tens place goes above 9 then the hundreds place is incremented and the tens place is 0 again
+        {
+            code1[1] = 0;
+            code1[0] = code1[0] + 1;
+            if (code1[0] == 10) //If the hundereds place goes above 9 then the setting is reset to 0
+            {
+                code1[0] = 0;
+                code1[1] = 0;
+                code1[2] = 0;
+            }
+        }
     }
 }
