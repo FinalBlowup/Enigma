@@ -1,12 +1,14 @@
 #include <iostream> //Basic requirement for cout/cin
 #include <string> //Program requires strings for the user entering either 'encode' or 'decode'
 using namespace std; //Used for convenience of not typing 'std::' every time
-void encode(char[] ,int[]);//Encode function introduced
+void encode(char[] ,int[]); //Encode function introduced
 void decode(char[] , int[]); //Decode function introduced
-void re(string, int[], char[]); //Recursion function
+void re(string, int[], char[]); //Recursion function introduced
 void quicksetting(int[]); //Setting function introduced
+void bigletters(); //Big letter function introduced
 int main()
 {
+    bigletters();
     char word[9000] = {' '}; //The word to be encoded
     int code1[3]; //Used for the settings
     string ed; //The 'encode' or 'decode' is saved in a string so that .compare can be used
@@ -16,7 +18,7 @@ void re(string ed,int code1[],char word[]) //If the user inputs a word that isn'
 {
     cout<<"Would you like to encode or decode? (Remember not to use numbers)"<<endl;
     cin>>ed; //User enters whether they want to encode or decode
-    
+
     if (ed.compare("encode") == 0) //If the user enters encode, it enters the if statement
     {
         cout<<"Enter the setting (Three numbers between 0 and 9; between numbers, add a space or use enter)."<<endl;
@@ -384,4 +386,46 @@ void quicksetting(int code1[]) //This function is for incrementing the user's or
             }
         }
     }
+}
+void bigletters() //Big letters to inform the user what the program does on a basic level
+{
+   cout<<"EEEEEEE   NN     N       CCCCC      OOOO      DDDDD     EEEEEEE "<<endl;
+   cout<<"E         N N    N     C          O      O    D    D    E       "<<endl;
+   cout<<"E         N  N   N   C           O        O   D     D   E       "<<endl;
+   cout<<"EEEEEEE   N   N  N   C           O        O   D     D   EEEEEEE "<<endl;
+   cout<<"E         N    N N   C           O        O   D     D   E       "<<endl;
+   cout<<"E         N     NN     C          O      O    D    D    E       "<<endl;
+   cout<<"EEEEEEE   N      N       CCCCC      O0000     DDDDD     EEEEEEE "<<endl;
+
+   cout<<endl<<endl;
+
+   cout<<"   AAA      NN      N   DDDDD      "<<endl;
+   cout<<"  A   A     N N     N   D    D     "<<endl;
+   cout<<" A     A    N  N    N   D     D    "<<endl;
+   cout<<"AAAAAAAAA   N   N   N   D     D    "<<endl;
+   cout<<"A       A   N    N  N   D     D    "<<endl;
+   cout<<"A       A   N     N N   D    D     "<<endl;
+   cout<<"A       A   N      NN   DDDDD      "<<endl;
+
+   cout<<endl<<endl;
+
+   cout<<"DDDDD     EEEEEEE       CCCCC      OOOO      DDDDD     EEEEEEE "<<endl;
+   cout<<"D    D    E           C          O      O    D    D    E       "<<endl;
+   cout<<"D     D   E         C           O        O   D     D   E       "<<endl;
+   cout<<"D     D   EEEEEEE   C           O        O   D     D   EEEEEEE "<<endl;
+   cout<<"D     D   E         C           O        O   D     D   E       "<<endl;
+   cout<<"D    D    E           C          O      O    D    D    E       "<<endl;
+   cout<<"DDDDD     EEEEEEE       CCCCC      OOOO      DDDDD     EEEEEEE "<<endl;
+
+   cout<<endl<<endl;
+
+   cout<<"PPPPPPP    RRRRRRR      OOOO        GGGGGGG       RRRRRRR       AAA      MM           M "<<endl;
+   cout<<"P      P   R      R   O      O     G              R      R     A   A     M M         MM "<<endl;
+   cout<<"P      P   R      R  O        O   G               R      R    A     A    M  M       M M "<<endl;
+   cout<<"PPPPPPP    RRRRRRR   O        O   G               RRRRRRR    AAAAAAAAA   M   M     M  M "<<endl;
+   cout<<"P          RRR       O        O    G    GGGGGGG   RRR        A       A   M    M   M   M "<<endl;
+   cout<<"P          R   R      O      O      G      G  G   R   R      A       A   M     M M    M "<<endl;
+   cout<<"P          R     R      OOOO         GGGGGG   G   R     R    A       A   M      M     M "<<endl;
+
+   cout<<endl<<endl;
 }
